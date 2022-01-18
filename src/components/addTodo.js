@@ -10,6 +10,7 @@ const dispatch=useDispatch()
 const addTodo=()=>{
   const newTodo={id: Math.random(), text:input, isDone:false}
   dispatch(   addHandler(newTodo))
+  setInput('')
 }
 
   return (
@@ -17,6 +18,7 @@ const addTodo=()=>{
       <input
         placeholder="add your task here ..."
      onChange={(e)=>setInput(e.target.value)}
+     value={input}
       />
       <button onClick={addTodo} >
         {" "}
